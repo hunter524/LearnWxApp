@@ -1,9 +1,69 @@
-.text-style{
-  height: 200px;
-  background-color: lightblue;
-  font-size: 200px;
-}
+$default-bg:#f0f0f0;
+$divide-color:#dcdcdc;
+
+$default-font-size:28px;
+$default-font-color:black;
+
+$default-placeholder-color:#dddddd;
+$default-bt-bg:#0F77F7;
+
+
 .scroll_container{
   height: 100%;
   width: 100%;
+  background-color: $default-bg;
+}
+
+.item_input_container{
+  margin: 10px 0px;
+  padding:{
+    top: 0px;
+    bottom: 0px;
+    right: 20px;
+    left: 20px;
+  };
+  background-color: white;
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  height: 50px;
+  width: 100%;
+  border: {
+    top: 10px;
+    bottom: 10px;
+    color: blue;
+  }
+}
+
+.item_label_prefix {
+  text-align: left;
+  height: auto;
+  width: 250px;
+  font-size: $default-font-size;
+  color:$default-font-color;
+  flex-grow: 0;
+  line-height: 50px;
+}
+
+.item_label_suffix {
+  height: auto;
+  width:200px;
+  font-size: $default-font-size;
+  color:$default-font-color;
+  flex-grow: 0;
+  line-height: 50px;
+  text-align: center;
+}
+
+.item_input{
+  height: auto;
+  font-size: $default-font-size;
+  color:$default-font-color;
+  flex-grow: 1;
+}
+
+.submit_button{
+  margin: 20px 20px;
+  color: $default-bt-bg;
+  border-radius: 10px 10px;
 }
