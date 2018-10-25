@@ -1,69 +1,56 @@
-$default-bg:#f0f0f0;
-$divide-color:#dcdcdc;
 
-$default-font-size:28px;
-$default-font-color:black;
-
-$default-placeholder-color:#dddddd;
-$default-bt-bg:#0F77F7;
 
 
 .scroll_container{
   height: 100%;
   width: 100%;
-  background-color: $default-bg;
+  background-color: lightblue;
 }
 
-.item_input_container{
-  margin: 10px 0px;
-  padding:{
-    top: 0px;
-    bottom: 0px;
-    right: 20px;
-    left: 20px;
-  };
-  background-color: white;
-  display: flex;
-  flex-wrap: nowrap;
-  flex-direction: row;
-  height: 50px;
-  width: 100%;
-  border: {
-    top: 10px;
-    bottom: 10px;
-    color: blue;
+.submit_button_color{
+  color: aqua;
+}
+
+.submit_button_font{
+  font-size: 20px;
+}
+
+
+.image{
+  width: 750px;
+  height: 540px;
+  background: blue;
+}
+
+//可以使用这种方式覆盖 组件默认的属性
+//!important 提升元素优先级只能加载 属性值后面 无法加在class 选择器上
+$tab_default-color : #606060;
+$tab_selected-color : #FC511C;
+.at-tabs {
+  margin-top: -22px !important;
+  &__item {
+    color: $tab_default-color;
+    &::after {
+      background-color: $tab_selected-color;
+      bottom: 40px;
+    }
+
+    &--active {
+      color: $tab_selected-color;
+    }
+  }
+  &__header {
+    height: 150px;
+    .at-tabs__item{
+      height: auto;
+      width: auto;
+    }
+  }
+  &__underline{
+    height: 1PX;
+    background-color: #e9e9e9;
   }
 }
 
-.item_label_prefix {
-  text-align: left;
-  height: auto;
-  width: 250px;
-  font-size: $default-font-size;
-  color:$default-font-color;
-  flex-grow: 0;
-  line-height: 50px;
-}
 
-.item_label_suffix {
-  height: auto;
-  width:200px;
-  font-size: $default-font-size;
-  color:$default-font-color;
-  flex-grow: 0;
-  line-height: 50px;
-  text-align: center;
-}
 
-.item_input{
-  height: auto;
-  font-size: $default-font-size;
-  color:$default-font-color;
-  flex-grow: 1;
-}
-
-.submit_button{
-  margin: 20px 20px;
-  color: $default-bt-bg;
-  border-radius: 10px 10px;
-}

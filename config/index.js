@@ -66,7 +66,12 @@ const config = {
         },
         url: {
           enable: true,
-          limit: 10240
+          limit: 1024000
+        },
+        pxtransform: {
+          enable: true,
+          config: {
+          }
         }
       }
     }
@@ -78,11 +83,16 @@ const config = {
       postcss: {
         autoprefixer: {
           enable: true
+        },
+        pxtransform: {
+          enable: true,
+          config: {
+          }
         }
       }
     }
   }
-}
+};
 
 module.exports = function (merge) {
   if (process.env.NODE_ENV === 'development') {

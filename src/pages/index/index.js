@@ -1,11 +1,18 @@
 /* eslint-disable react/no-multi-comp */
 import Taro, {Component} from '@tarojs/taro'
-import {View, Text, ScrollView, Button, Input} from '@tarojs/components'
-import ReactPropTypes from 'prop-types'
-import InputItem from './InputItem.js'
-
+import {Button, Image, ScrollView, View} from '@tarojs/components'
+import {AtTabs, AtTabsPane} from 'taro-ui'
+import newAddPng from '../../image/index/new_add.png'
+import './index.scss'
 
 export default class Index extends Component {
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      currentTab: 0,
+    }
+  }
 
   //配置标题颜色
   config = {
@@ -19,13 +26,6 @@ export default class Index extends Component {
 
   componentDidMount() {
 
-    //调用Taro的登录请求(wx.login)
-    Taro.login().then(function (response) {
-      console.log(response.errMsg)
-      console.log(response.code)
-    }, function (errr) {
-      console.log(errr)
-    })
   }
 
   componentWillUnmount() {
@@ -36,22 +36,58 @@ export default class Index extends Component {
 
   componentDidHide() {
   }
+
+  //Taro 的导航操作
+  onSubmit() {
+
+    //Taro 导航到一个新的页面
+    Taro.navigateTo(
+      {
+        url: '/pages/first/first?name=hunter&age=25'
+      }
+    )
+  }
+
+  onChangeTab(value) {
+    console.log("onChangeTab", value);
+    this.setState({
+      currentTab: value,
+    })
+  }
+
   render() {
     return (
       <ScrollView scrollY scrollWithAnimation className='scroll_container'>
-        <InputItem title='税前工资' inputPlaceHolder='税前工资' type='1' />
-        <InputItem title='子女教育' inputPlaceHolder='子女教育' type='2' />
-        <InputItem title='大病医疗' inputPlaceHolder='大病医疗' type='3' />
-        <InputItem title='住房租金' inputPlaceHolder='住房租金' type='4' />
-        <InputItem title='房贷利息' inputPlaceHolder='房贷利息' type='5' />
-        <InputItem title='年终奖元' inputPlaceHolder='年终奖元' type='6' />
-        <InputItem />
+        <Image src={newAddPng} className='image' />
+        <AtTabs
+          current={this.state.currentTab}
+          scroll={false}
+          className='at-tabs'
+          animated={false}
+          tabDirection='horizontal'
+          tabList={[{title: '按月薪计算'}, {title: '按年薪计算'}]}
+          onClick={this.onChangeTab.bind(this)}
+        >
+          <AtTabsPane
+            current={this.state.currentTab}
+            index={0}
+          >
+            <View style={{height: 200, width: "100%"}}> 11111</View>
 
-        <Button>提交</Button>
+          </AtTabsPane>
+          <AtTabsPane current={this.state.currentTab} index={1}>
+            <View style={{height: 100, width: "100%"}}> 222222</View>
+          </AtTabsPane>
+        </AtTabs>
+        <Button className='submit_button submit_button_font' onClick={this.onSubmit}>提交</Button>
+        <Button className='cancel_button'>取消</Button>
       </ScrollView>
     )
   }
 }
+
+
+
 
 
 
