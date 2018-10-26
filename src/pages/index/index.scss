@@ -4,39 +4,54 @@
 .scroll_container{
   height: 100%;
   width: 100%;
-  background-color: lightblue;
 }
 
 .submit_button_color{
   color: aqua;
 }
-
-.submit_button_font{
-  font-size: 20px;
+.submit_button{
+  height: 90px;
+  margin-top: 32px;
+  margin-left: 15px;
+  margin-right: 15px;
+  background-color: #FC511C;
+  color: white;
 }
 
 
-.image{
+.image_banner{
   width: 750px;
   height: 540px;
-  background: blue;
 }
+
+.image_divider{
+  width: 750px;
+  height: 66px;
+}
+
+
 
 //可以使用这种方式覆盖 组件默认的属性
 //!important 提升元素优先级只能加载 属性值后面 无法加在class 选择器上
+//微信端要覆盖默认属性需要添加 !important 标记
 $tab_default-color : #606060;
 $tab_selected-color : #FC511C;
 .at-tabs {
   margin-top: -22px !important;
   &__item {
     color: $tab_default-color;
+    padding-bottom: 40px;
+    line-height: 80px;
     &::after {
-      background-color: $tab_selected-color;
+      background-color: $tab_selected-color !important;
       bottom: 40px;
+      left: 80px;
+      height: 5px;
+      width: 190px;
     }
 
     &--active {
-      color: $tab_selected-color;
+      color: $tab_selected-color !important;
     }
   }
   &__header {
@@ -52,5 +67,37 @@ $tab_selected-color : #FC511C;
   }
 }
 
+.tab_inner_item{
+  display: flex;
+  flex-direction: row;
+  height: 70px;
+  padding: 10px 30px;
+  align-items: center;
+  &__left{
+    width: 244px;
+    flex-direction: row;
+    display: flex;
+    align-items: center;
+  }
+  &__left_title{
+    color: #1c1c1c;
+    font-size: 28px;
+  }
+  &__left_sub{
+    color: #878686;
+    font-size: 28px;
+  }
+  &__right{
+    height: 100%;
+    align-content: stretch;
+    border-radius: 4px 4px;
+    background: #F1F2F6;
+    color:#1c1c1c;
+  }
+  &__right_place_holder{
+    color: #808080;
+    font-size: 28px;
+  }
+}
 
 
