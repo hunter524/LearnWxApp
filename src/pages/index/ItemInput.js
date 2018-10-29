@@ -7,7 +7,7 @@ import './ItemInput.scss'
 
 export default class ItemInput extends Component {
   constructor(props) {
-    super(props)
+    super(props);
     this.state={
       selected:[],
     }
