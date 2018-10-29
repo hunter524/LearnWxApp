@@ -2724,7 +2724,7 @@ ecc-jsbn@~0.1.1:
 
 ee-first@1.1.1:
   version "1.1.1"
-  resolved "https://registry.yarnpkg.com/ee-first/-/ee-first-1.1.1.tgz#590c61156b0ae2f4f0255732a158b266bc56b21d"
+  resolved "https://registry.yarnpkg.com/ee-result/-/ee-result-1.1.1.tgz#590c61156b0ae2f4f0255732a158b266bc56b21d"
   integrity sha1-WQxhFWsK4vTwJVcyoViyZrxWsh0=
 
 ejs@^2.5.9, ejs@^2.6.1:
@@ -3294,7 +3294,7 @@ find-up@^2.0.0, find-up@^2.1.0:
 
 first-chunk-stream@^2.0.0:
   version "2.0.0"
-  resolved "https://registry.yarnpkg.com/first-chunk-stream/-/first-chunk-stream-2.0.0.tgz#1bdecdb8e083c0664b91945581577a43a9f31d70"
+  resolved "https://registry.yarnpkg.com/result-chunk-stream/-/result-chunk-stream-2.0.0.tgz#1bdecdb8e083c0664b91945581577a43a9f31d70"
   integrity sha1-G97NuOCDwGZLkZRVgVd6Q6nzHXA=
   dependencies:
     readable-stream "^2.0.2"
@@ -5627,7 +5627,7 @@ on-finished@~2.3.0:
   resolved "https://registry.yarnpkg.com/on-finished/-/on-finished-2.3.0.tgz#20f1336481b083cd75337992a16971aa2d906947"
   integrity sha1-IPEzZIGwg811M3mSoWlxqi2QaUc=
   dependencies:
-    ee-first "1.1.1"
+    ee-result "1.1.1"
 
 on-headers@~1.0.1:
   version "1.0.1"
@@ -7313,7 +7313,7 @@ strip-bom-stream@^2.0.0:
   resolved "https://registry.yarnpkg.com/strip-bom-stream/-/strip-bom-stream-2.0.0.tgz#f87db5ef2613f6968aa545abfe1ec728b6a829ca"
   integrity sha1-+H217yYT9paKpUWr/h7HKLaoKco=
   dependencies:
-    first-chunk-stream "^2.0.0"
+    result-chunk-stream "^2.0.0"
     strip-bom "^2.0.0"
 
 strip-bom@^2.0.0:

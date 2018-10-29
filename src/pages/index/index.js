@@ -47,7 +47,7 @@ export default class Index extends Component {
     // //Taro 导航到一个新的页面
     Taro.navigateTo(
       {
-        url: '/pages/first/first?name=hunter&age=25'
+        url: '/pages/result/result?name=hunter&age=25'
       }
     )
   }
@@ -68,22 +68,33 @@ export default class Index extends Component {
             <View className='tab_inner_item__left_title'>月薪</View>
             <View className='tab_inner_item__left_sub'>(税前)</View>
           </View>
-          <Input
-            className='tab_inner_item__right'
-            placeholderClass='tab_inner_item__right_place_holder'
-            placeholder='请输入'
-          />
+          <View className='tab_inner_item__right_container'>
+            <Input
+              className='tab_inner_item__right'
+              placeholderClass='tab_inner_item__right_place_holder'
+              placeholderStyle='tab_inner_item__right_place_holder'
+              placeholder='请输入'
+              type='digit'
+              confirmType='next'
+              autoFocus='true'
+            />
+          </View>
         </View>
         <View className='tab_inner_item'>
           <View className='tab_inner_item__left'>
             <View className='tab_inner_item__left_title'>年终奖</View>
             <View className='tab_inner_item__left_sub'>(税前)</View>
           </View>
-          <Input
-            className='tab_inner_item__right'
-            placeholderClass='tab_inner_item__right_place_holder'
-            placeholder='请输入'
-          />
+
+          <View className='tab_inner_item__right_container'>
+
+            <Input
+              className='tab_inner_item__right'
+              placeholderClass='tab_inner_item__right_place_holder'
+              placeholder='请输入'
+              type='digit'
+            />
+          </View>
         </View>
       </View>
     );
@@ -95,11 +106,15 @@ export default class Index extends Component {
             <View className='tab_inner_item__left_title'>年薪</View>
             <View className='tab_inner_item__left_sub'>(税前)</View>
           </View>
-          <Input
-            className='tab_inner_item__right'
-            placeholderClass='tab_inner_item__right_place_holder'
-            placeholder='请输入'
-          />
+          <View className='tab_inner_item__right_container'>
+
+            <Input
+              className='tab_inner_item__right'
+              placeholderClass='tab_inner_item__right_place_holder'
+              type='number'
+              placeholder='请输入'
+            />
+          </View>
         </View>
       </View>
     );
@@ -152,23 +167,19 @@ export default class Index extends Component {
           mainTitle='是否有医疗费用支出'
           subTitle='抵扣金额'
           subValue='0'
-          tips='纳税人在一个纳税年度内发生的自付医药费用超过1.5万元部分，可在每年6万元限额内据实扣除；' />
+          tips='纳税人在一个纳税年度内发生的自付医药费用超过1.5万元部分，可在每年6万元限额内据实扣除；'/>
 
         <ItemInput
           mainTitle='是否有继续教育支出'
           subTitle='抵扣金额'
           subValue='400元/月'
-          tips='纳税人接受学历或非学历继续教育的支出，在规定期间可按每年3600元或4800元定额扣除；' />
+          tips='纳税人接受学历或非学历继续教育的支出，在规定期间可按每年3600元或4800元定额扣除；'/>
 
         <Button className='submit_button' onClick={this.onSubmit}>马上计算</Button>
       </ScrollView>
     )
   }
 }
-
-
-
-
 
 
 // 请输入有教育支出的子女数

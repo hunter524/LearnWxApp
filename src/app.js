@@ -8,13 +8,13 @@ class App extends Component {
   config = {
     pages: [
       'pages/index/index',
-      'pages/first/first'
+      'pages/result/result'
     ],
     window: {
       backgroundTextStyle: 'light',
-      navigationBarBackgroundColor: '#fff',
-      navigationBarTitleText: 'WeChat',
-      navigationBarTextStyle: 'black'
+      navigationBarTitleText: '投资账本',
+      navigationBarBackgroundColor: '#ff5341',
+      navigationBarTextStyle: 'white',
     }
   }
 

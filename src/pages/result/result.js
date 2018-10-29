@@ -1,6 +1,6 @@
 import Taro, {Component} from '@tarojs/taro'
 import {View, Text, ScrollView, Button, Input} from '@tarojs/components'
-export default class First extends Component {
+export default class Result extends Component {
 
   onBack(){
     Taro.navigateBack()

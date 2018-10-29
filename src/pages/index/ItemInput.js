@@ -1,11 +1,24 @@
 import Taro, {Component} from '@tarojs/taro'
 import {Button, Image, ScrollView, View, Input} from '@tarojs/components'
+import {AtCheckbox} from 'taro-ui'
 import ReactPropTypes from 'prop-types'
+import './index.scss'
 import './ItemInput.scss'
 
 export default class ItemInput extends Component {
   constructor(props) {
     super(props)
+    this.state={
+      selected:[],
+    }
+  }
+  onChange(value){
+    console.log(value)
+    this.setState(
+      {
+        selected:value,
+      }
+    )
   }
 
   render() {
@@ -15,7 +28,12 @@ export default class ItemInput extends Component {
           <View className='item__title__text'>
             {this.props.mainTitle}
           </View>
-          <View className='item__title__right_img'></View>
+          <AtCheckbox
+            className='at-checkbox'
+            options={[{value:"va"}]}
+            selectedList={this.state.selected}
+            onChange={this.onChange.bind(this)}
+          />
         </View>
 
         <View className='item__content'>
@@ -44,5 +62,6 @@ ItemInput.defaultProps = {
   mainTitle: '2222222222222222',
   subTitle: '1111111111',
   subValue: '5555555555',
-  tips: '6666666666'
+  tips: '6666666666',
+  typeValue:'typeValue'
 };
